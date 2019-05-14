@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Grad Cap</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0 10px;
+                background-color: #222;
+            }
+            h1 {
+                text-align: center;
+                font-weight: normal;
+                color: #fff;
+            }
+            button {
+                display: block;
+                margin: 8px 0;
+                border: none;
+                border-radius: 5px;
+                background-color: #939393;
+                color: white;
+                width: 100%;
+                height: 50px;
+                font-size: 1.1em;
+                text-transform: uppercase;
+            }
+            button:hover {
+                cursor: pointer;
+                background-color: #626262;
+            }
+        </style>
+        <script>
+            function call(val) {
+                $.ajax({
+                    url: val,
+                    type: 'GET',
+                    success: function(data) {
+                        alert(data['status']);
+                    },
+                    error: function(data) {
+                        alert('Error!');
+                    }
+                });
+            }
+        </script>
+        <h1>Grad Cap HQ</h1>
+        <button onclick="call('start')">Start</button>
+        <button onclick="call('stop')">Stop</button>
+    </body>
+</html>
